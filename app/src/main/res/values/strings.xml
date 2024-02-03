@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Moviedb</string>
+    <string name="title">Usa nuestra base de datos para conocer más de tus pelis favoritas</string>
+    <string name="advice1">Intuitiva</string>
+    <string name="advice2">Fácil de registrarte</string>
+    <string name="advice3">Toda tu información siempre disponible</string>
+    <string name="continue_text">continuar</string>
 </resources>
