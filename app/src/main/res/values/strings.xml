@@ -5,4 +5,8 @@
     <string name="advice2">Fácil de registrarte</string>
     <string name="advice3">Toda tu información siempre disponible</string>
     <string name="continue_text">continuar</string>
+    <string name="login_input_name">Escribe tu nombre</string>
+    <string name="login_input_password">Escribe tu contraseña</string>
+    <string name="login">Login</string>
+    <string name="registrarse">Registrarse</string>
 </resources>

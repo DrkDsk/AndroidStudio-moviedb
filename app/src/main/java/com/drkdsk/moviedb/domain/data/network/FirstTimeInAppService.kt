@@ -14,7 +14,7 @@ class FirstTimeInAppService {
             val response = firestore.collection(BuildConfig.StringCollectionDeviceTokens).document("TC4XqNORkc1MHtoAg1XN")
                 .get().await()
 
-            response.data != null
+            response.data == null
         }
     }
 

@@ -10,6 +10,7 @@
         android:name="com.drkdsk.moviedb.ui.view.LandingPageFragment"
         android:label="fragment_landingpage"
         tools:layout="@layout/fragment_landingpage" />
+
     <fragment
         android:id="@+id/progressBarFragment"
         android:name="com.drkdsk.moviedb.ui.view.ProgressBarFragment"
@@ -18,5 +19,13 @@
         <action
             android:id="@+id/action_progressBarFragment_to_landingPageFragment"
             app:destination="@id/landingPageFragment" />
+        <action
+            android:id="@+id/action_progressBarFragment_to_authFragment"
+            app:destination="@id/authFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.drkdsk.moviedb.ui.view.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
 </navigation>
