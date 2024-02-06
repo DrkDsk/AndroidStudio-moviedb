@@ -7,8 +7,6 @@ import com.drkdsk.moviedb.domain.data.usecases.GetFirstTimeInAppUseCase
 import kotlinx.coroutines.launch
 
 class LandingPageViewModel: ViewModel() {
-
-    val isLoading = MutableLiveData<Boolean>()
     val isFirstTimeInApp = MutableLiveData<Boolean>()
     var getIsFirstTimeInAppCase = GetFirstTimeInAppUseCase()
 
@@ -16,7 +14,6 @@ class LandingPageViewModel: ViewModel() {
         viewModelScope.launch {
             val result = getIsFirstTimeInAppCase()
 
-            isLoading.postValue(false)
             isFirstTimeInApp.postValue(result)
         }
     }
