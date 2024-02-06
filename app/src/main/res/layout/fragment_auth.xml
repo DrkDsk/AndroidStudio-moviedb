@@ -38,7 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/login_input_password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:autofillHints="password"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
