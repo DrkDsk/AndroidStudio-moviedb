@@ -1,6 +1,6 @@
 package com.drkdsk.moviedb.domain.repositories
 
-import com.drkdsk.moviedb.domain.data.model.FirsTimeInAppProvider
+import com.drkdsk.moviedb.domain.data.provider.FirsTimeInAppProvider
 import com.drkdsk.moviedb.domain.data.network.FirstTimeInAppService
 
 class FirstTimeAppRepository {

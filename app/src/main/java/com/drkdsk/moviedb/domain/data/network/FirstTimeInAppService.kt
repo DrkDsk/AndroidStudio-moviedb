@@ -11,7 +11,7 @@ class FirstTimeInAppService {
 
     suspend fun getIsFirstTimeInApp() : Boolean {
         return withContext(Dispatchers.IO) {
-            val response = firestore.collection(BuildConfig.StringCollectionDeviceTokens).document("TC4XqNORkc1MHtoAg1XN")
+            val response = firestore.collection(BuildConfig.CollectionDeviceTokens).document("TC4XqNORkc1MHtoAg1XN")
                 .get().await()
 
             response.data == null

@@ -6,7 +6,10 @@
     <string name="advice3">Toda tu información siempre disponible</string>
     <string name="continue_text">continuar</string>
     <string name="login_input_name">Escribe tu nombre</string>
-    <string name="login_input_password">Escribe tu contraseña</string>
-    <string name="login">Login</string>
+    <string name="login_input_email">correo electrónico</string>
+    <string name="login_input_password">contraseña</string>
+    <string name="login">Iniciar Sesión</string>
     <string name="registrarse">Registrarse</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="imagen_de_portada_description">Imagen de portada</string>
 </resources>

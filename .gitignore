@@ -1,6 +1,7 @@
 *.iml
 .gradle
 /local.properties
+/apikey.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -13,12 +14,12 @@
 .externalNativeBuild
 .cxx
 local.properties
+apikey.properties
 
 *.apk
 output.json
 
 # IntelliJ
-*.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml

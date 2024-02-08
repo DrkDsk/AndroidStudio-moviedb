@@ -33,15 +33,15 @@ class ProgressBarFragment : Fragment() {
 
         landingPageViewModel.isFirstTimeInApp.observe(viewLifecycleOwner) { firstTimeInApp ->
             when(firstTimeInApp) {
-                true -> navigateToAuthFragment()
+                true -> navigateToLoginFragment()
                 false -> navigateToLandingPage()
             }
         }
     }
 
-    private fun navigateToAuthFragment() {
+    private fun navigateToLoginFragment() {
         findNavController().navigate(
-            ProgressBarFragmentDirections.actionProgressBarFragmentToAuthFragment()
+            ProgressBarFragmentDirections.actionProgressBarFragmentToLandingPageFragment()
         )
     }
 

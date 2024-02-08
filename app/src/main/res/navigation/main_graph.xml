@@ -9,7 +9,11 @@
         android:id="@+id/landingPageFragment"
         android:name="com.drkdsk.moviedb.ui.view.LandingPageFragment"
         android:label="fragment_landingpage"
-        tools:layout="@layout/fragment_landingpage" />
+        tools:layout="@layout/fragment_landingpage" >
+        <action
+            android:id="@+id/action_landingPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/progressBarFragment"
@@ -20,12 +24,21 @@
             android:id="@+id/action_progressBarFragment_to_landingPageFragment"
             app:destination="@id/landingPageFragment" />
         <action
-            android:id="@+id/action_progressBarFragment_to_authFragment"
-            app:destination="@id/authFragment" />
+            android:id="@+id/action_progressBarFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/authFragment"
-        android:name="com.drkdsk.moviedb.ui.view.AuthFragment"
-        android:label="fragment_auth"
-        tools:layout="@layout/fragment_auth" />
+        android:id="@+id/homeFragment"
+        android:name="com.drkdsk.moviedb.ui.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.drkdsk.moviedb.ui.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

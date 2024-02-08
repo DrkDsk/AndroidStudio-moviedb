@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.drkdsk.moviedb.databinding.FragmentLandingpageBinding
 
 class LandingPageFragment : Fragment() {
@@ -19,6 +20,12 @@ class LandingPageFragment : Fragment() {
     ): View {
 
         _binding = FragmentLandingpageBinding.inflate(inflater, container, false)
+
+        binding.btnContinue.setOnClickListener {
+            findNavController().navigate(
+                LandingPageFragmentDirections.actionLandingPageFragmentToLoginFragment()
+            )
+        }
 
         return binding.root
     }

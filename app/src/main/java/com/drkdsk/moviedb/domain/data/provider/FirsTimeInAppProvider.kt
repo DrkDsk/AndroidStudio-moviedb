@@ -1,4 +1,4 @@
-package com.drkdsk.moviedb.domain.data.model
+package com.drkdsk.moviedb.domain.data.provider
 
 class FirsTimeInAppProvider {
 

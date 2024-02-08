@@ -1,9 +1,17 @@
+import java.io.FileInputStream
+import java.util.Properties
+
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("androidx.navigation.safeargs.kotlin")
 }
+
+var apikeyPropertiesFile: File = rootProject.file("app/apikey.properties")
+var properties = Properties()
+properties.load(FileInputStream(apikeyPropertiesFile))
 
 android {
     namespace = "com.drkdsk.moviedb"
@@ -43,7 +51,9 @@ android {
     flavorDimensions += listOf("vars")
     productFlavors {
         create("dev") {
-            buildConfigField("String", "StringCollectionDeviceTokens", "\"device_tokens\"")
+            buildConfigField("String", "CollectionDeviceTokens", "\"device_tokens\"")
+            buildConfigField("String", "BaseUrlMovieDB", properties.getProperty("APIURI_MOVIEDB"))
+            buildConfigField("String", "ApikeyMoviedb", properties.getProperty("APIKEY_MOVIEDB"))
         }
     }
 
@@ -64,6 +74,10 @@ dependencies {
     // Declare the dependency for the Cloud Firestore library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-firestore")
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth-ktx")
 
     val navVersion = "2.7.6"
 
@@ -86,6 +100,13 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     //LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Corrutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
