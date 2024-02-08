@@ -62,16 +62,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        //mandar a llamar a viewModel
         homeViewModel.onCreate()
 
-        binding.recyclerViewMovie.layoutManager =  LinearLayoutManager(binding.root.context)
-        binding.recyclerViewMovie.adapter = MovieAdapter(MovieProvider.movieList) { movie ->
-            onItemSelected(movie)
+        homeViewModel.moviesModel.observe(viewLifecycleOwner) {
+            binding.recyclerViewMovie.layoutManager =  LinearLayoutManager(binding.root.context)
+            binding.recyclerViewMovie.adapter = MovieAdapter(MovieProvider.movieList) { movie ->
+                onItemSelected(movie)
+            }
         }
     }
 
     private fun onItemSelected(movie: MovieModel) {
-        Toast.makeText(binding.root.context, movie.name, Toast.LENGTH_LONG).show()
+        Toast.makeText(binding.root.context, movie.title, Toast.LENGTH_LONG).show()
     }
 }

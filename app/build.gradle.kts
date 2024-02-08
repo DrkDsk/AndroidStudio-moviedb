@@ -53,6 +53,8 @@ android {
         create("dev") {
             buildConfigField("String", "CollectionDeviceTokens", "\"device_tokens\"")
             buildConfigField("String", "BaseUrlMovieDB", properties.getProperty("APIURI_MOVIEDB"))
+            buildConfigField("String", "ExtraBaseUrlMovieDB", properties.getProperty("APIEXTRA_URI_MOVIEDB"))
+            buildConfigField("String", "ImageViewHost", properties.getProperty("IMAGEHOST_MOVIEDB"))
             buildConfigField("String", "ApikeyMoviedb", properties.getProperty("APIKEY_MOVIEDB"))
         }
     }
