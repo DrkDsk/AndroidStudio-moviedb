@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_movie_margin_top">40dp</dimen>
+    <dimen name="card_movie_margin_bottom">40dp</dimen>
+    <dimen name="card_movie_margin_left">20dp</dimen>
+    <dimen name="card_movie_margin_right">20dp</dimen>
+    <dimen name="card_movie_margin_between_vertical">15dp</dimen>
+</resources>

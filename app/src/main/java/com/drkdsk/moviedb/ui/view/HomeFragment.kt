@@ -2,22 +2,18 @@ package com.drkdsk.moviedb.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.drkdsk.moviedb.R
 import com.drkdsk.moviedb.databinding.FragmentHomeBinding
 import com.drkdsk.moviedb.domain.data.model.MovieModel
 import com.drkdsk.moviedb.domain.data.provider.MovieProvider
 import com.drkdsk.moviedb.ui.adapter.MovieAdapter
+import com.drkdsk.moviedb.ui.view.decoration.MarginItemDecoration
 import com.drkdsk.moviedb.ui.viewModel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -42,7 +38,7 @@ class HomeFragment : Fragment() {
 
         initRecyclerView()
 
-        binding.toolbar.addMenuProvider(object : MenuProvider {
+        /*binding.toolbar.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.menu, menu)
             }
@@ -59,13 +55,25 @@ class HomeFragment : Fragment() {
 
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+         */
     }
 
     private fun initRecyclerView() {
         homeViewModel.onCreate()
 
         homeViewModel.moviesModel.observe(viewLifecycleOwner) {
-            binding.recyclerViewMovie.layoutManager =  LinearLayoutManager(binding.root.context)
+            val manager = LinearLayoutManager(binding.root.context)
+            binding.recyclerViewMovie.addItemDecoration(
+                MarginItemDecoration(
+                    spaceSizeTop = resources.getDimensionPixelSize(R.dimen.card_movie_margin_top),
+                    spaceSizeBottom = resources.getDimensionPixelSize(R.dimen.card_movie_margin_bottom),
+                    spaceSizeLeft = resources.getDimensionPixelSize(R.dimen.card_movie_margin_left),
+                    spaceSizeRight = resources.getDimensionPixelSize(R.dimen.card_movie_margin_right),
+                    spaceBetweenVertical = resources.getDimensionPixelSize(R.dimen.card_movie_margin_between_vertical)
+                )
+            )
+            binding.recyclerViewMovie.layoutManager =  manager
             binding.recyclerViewMovie.adapter = MovieAdapter(MovieProvider.movieList) { movie ->
                 onItemSelected(movie)
             }

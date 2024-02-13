@@ -4,7 +4,7 @@
     <string name="advice1">Intuitiva</string>
     <string name="advice2">Fácil de registrarte</string>
     <string name="advice3">Toda tu información siempre disponible</string>
-    <string name="continue_text">continuar</string>
+    <string name="continue_text">Continuar</string>
     <string name="login_input_name">Escribe tu nombre</string>
     <string name="login_input_email">correo electrónico</string>
     <string name="login_input_password">contraseña</string>
